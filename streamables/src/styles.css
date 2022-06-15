@@ -1,0 +1,342 @@
+/* ------------ General HTML Tag Styles ------------ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.2;
+	background-color: #32425f;
+	color: white;
+	min-height: 100vh;
+}
+
+h1 {
+	font-size: 1.7rem;
+	font-weight: 700;
+}
+
+h2 {
+	font-size: 1.25rem;
+}
+
+/* ---------- HELPER CLASSES styles ---------- */
+.flex-ac {
+	display: flex;
+	align-items: center;
+}
+
+/* ------------ HEADER Styles ------------ */
+
+header {
+	width: 100%;
+	background-color: #32425f;
+	padding: 0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-transform: uppercase;
+	box-shadow: 0 2px 3px 0 #000;
+}
+
+.movie-icon {
+	font-size: 1.5rem;
+}
+
+.left {
+	padding-right: 1rem;
+}
+
+.right {
+	padding-left: 1rem;
+}
+
+/* ------------ SEARCH Styles ------------ */
+
+.search-input {
+	background-color: #555f74;
+	opacity: 0.6;
+	padding: 1rem;
+	border-radius: 6px;
+	width: 80%;
+	margin: 0 auto;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+}
+
+.fa-magnifying-glass {
+	color: white;
+}
+
+input {
+	border: none;
+	outline: none;
+	background-color: transparent;
+	color: white;
+	font-size: 1rem;
+	padding-left: 0.5rem;
+	width: 100%;
+	/*  hide overflow text on smaller screen sizes and used ellipsis */
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+/* changes the cancel X symbol for search input */
+input::-webkit-search-cancel-button {
+	cursor: pointer;
+	-webkit-appearance: none;
+	width: 10px;
+	height: 10px;
+	background-image: url('./x-symbol.svg');
+}
+
+/* changes the search input placeholder color */
+::placeholder {
+	color: white;
+}
+
+/* ------------ MOVIE/SHOW styles ------------ */
+
+.poster {
+	background-image: url('./images/movie-poster.jpeg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	min-height: 100vh;
+	width: 100%;
+	opacity: 0.6;
+}
+
+.entertainment-container {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 25px;
+	padding: 1.25rem;
+}
+
+.entertainment-items {
+	width: 300px;
+	background-color: #161b33;
+	box-shadow: 0 3px 10px 0 #000;
+	padding: 0.5rem;
+	padding-bottom: 1rem;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.entertainment-items:hover,
+.entertainment-items:focus {
+	background-color: #fff;
+	color: #161b33;
+	transition: all 0.3s ease-in-out;
+}
+
+.entertainment-items p {
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-weight: 600;
+	font-size: 1.125rem;
+}
+
+.poster-img {
+	max-height: 365px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.entertainment-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.capitalized {
+	text-transform: capitalize;
+}
+
+/*  ---------- INFO CARD MODAL Styles ---------- */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	background-color: rgba(0, 0, 0, 0.6);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal {
+	background-color: #32425f;
+	color: #fff;
+	padding: 1rem;
+	width: 90%;
+	border-radius: 10px;
+	box-shadow: 0px 3px 8px 0px #000;
+	max-width: 1000px;
+	max-height: 100vh;
+	overflow-y: auto;
+}
+
+.modal-content {
+	padding: 0.8rem;
+}
+
+.close-btn {
+	display: flex;
+	justify-content: flex-end;
+}
+
+#closeBtn {
+	border: none;
+	background-color: transparent;
+	font-size: 1rem;
+	font-weight: 600;
+	color: white;
+	cursor: pointer;
+}
+
+.modal-img-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-img {
+	height: 350px;
+	object-fit: cover;
+	border-radius: 10px;
+}
+
+.media-info {
+	font-size: 1rem;
+	font-weight: 500;
+	margin: 0.5rem 0;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.media-title {
+	font-weight: 700;
+	font-size: 1.25rem;
+	margin: 1rem 0;
+	margin-top: 1.5rem;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.opacity {
+	opacity: 0.5;
+}
+
+.watch {
+	padding-top: 10px;
+}
+
+.links-container {
+	margin-top: 10px;
+}
+
+.link-icon {
+	width: 40px;
+}
+
+.stream-link {
+	padding: 0 0.5rem;
+}
+
+.stream-link:hover,
+.stream-link:focus {
+	opacity: 0.5;
+}
+
+.streaming {
+	margin-bottom: 20px;
+}
+
+.small-youtube {
+	width: 25px;
+}
+
+.trailer {
+	padding: 8px 20px;
+	border-radius: 5px;
+	background-color: #fe3e00;
+	text-decoration: none;
+	font-weight: 500;
+	color: white;
+	border: none;
+	display: flex;
+	align-items: center;
+	max-width: 200px;
+}
+
+.trailer:hover,
+.trailer:focus {
+	opacity: 0.5;
+}
+
+/* ---------- MEDIA QUERIES ---------- */
+
+@media (min-width: 53.75em) {
+	body {
+		line-height: 1.4;
+	}
+	h1 {
+		font-size: 2.625rem;
+	}
+
+	.movie-icon {
+		font-size: 2.625rem;
+	}
+
+	.modal {
+		padding: 1rem 2rem;
+	}
+
+	.modal-content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 30px;
+		padding: 2rem 3rem;
+	}
+
+	.modal-img {
+		height: 350px;
+		object-fit: cover;
+	}
+
+	.media-info {
+		margin: 0.5rem 0;
+	}
+
+	.media-title {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 62em) {
+	h1 {
+		font-size: 3.25rem;
+	}
+
+	.movie-icon {
+		font-size: 3.25rem;
+	}
+}
