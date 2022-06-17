@@ -13,6 +13,7 @@ export default function InfoCardModal(props) {
 	const { selectedMedia } = props;
 	const [mediaInfo, setMediaInfo] = useState();
 	const [youtubeData, setYoutubeData] = useState();
+	console.log(youtubeData);
 
 	useEffect(() => {
 		axios
