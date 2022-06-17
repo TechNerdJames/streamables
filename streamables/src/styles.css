@@ -89,13 +89,13 @@ input {
 }
 
 /* changes the cancel X symbol for search input */
-input::-webkit-search-cancel-button {
+/* input::-webkit-search-cancel-button {
 	cursor: pointer;
 	-webkit-appearance: none;
 	width: 10px;
 	height: 10px;
 	background-image: url('./x-symbol.svg');
-}
+} */
 
 /* changes the search input placeholder color */
 ::placeholder {
@@ -188,7 +188,7 @@ input::-webkit-search-cancel-button {
 	border-radius: 10px;
 	box-shadow: 0px 3px 8px 0px #000;
 	max-width: 1000px;
-	max-height: 100vh;
+	max-height: 90vh;
 	overflow-y: auto;
 }
 
