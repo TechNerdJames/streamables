@@ -1,4 +1,4 @@
 [build]
 functions = "functions"
-base = "streamables/
+base = "streamables/"
 publish = "build"
