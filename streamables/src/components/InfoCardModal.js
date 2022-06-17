@@ -16,31 +16,24 @@ export default function InfoCardModal(props) {
 
 	useEffect(() => {
 		axios
-			.get(
-				`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&i=${selectedMedia}`
-			)
+			.get(`/.netlify/functions/fetchSelected?i=${selectedMedia}`)
 			.then((data) => setMediaInfo(data.data));
 	}, [selectedMedia]);
 
 	useEffect(() => {
-		const options = {
-			method: 'GET',
-			url: 'http://localhost:8000/links',
-			params: { source_id: selectedMedia, source: 'imdb', country: 'ca' },
-		};
-		axios.request(options).then((response) =>
-			setMediaInfo((prevInfo) => ({
-				...prevInfo,
-				links: response.data.collection.locations,
-			}))
-		);
+		axios
+			.get(`/.netlify/functions/fetchLinks?source_id=${selectedMedia}`)
+			.then((response) =>
+				setMediaInfo((prevInfo) => ({
+					...prevInfo,
+					links: response.data.collection.locations,
+				}))
+			);
 	}, [selectedMedia]);
 
 	useEffect(() => {
 		axios
-			.get(
-				`https://imdb-api.com/API/YouTubeTrailer?apiKey=${process.env.REACT_APP_IMDB_API_KEY}&id=${selectedMedia}`
-			)
+			.get(`/.netlify/functions/fetchTrailer?id=${selectedMedia}`)
 			.then((data) => setYoutubeData(data.data));
 	}, [selectedMedia]);
 
@@ -155,11 +148,13 @@ export default function InfoCardModal(props) {
 													))}
 											</div>
 										</>
+									) : mediaInfo.links === undefined ? (
+										<h4>Not available</h4>
 									) : (
 										<h4>Loading...</h4>
 									)}
 
-									{youtubeData ? (
+									{youtubeData?.videoUrl ? (
 										<a
 											href={youtubeData.videoUrl}
 											target="_blank"
@@ -173,7 +168,9 @@ export default function InfoCardModal(props) {
 											/>
 											Watch Trailer
 										</a>
-									) : null}
+									) : youtubeData?.videoUrl === '' ? null : (
+										<h4>Loading...</h4>
+									)}
 								</div>
 							</div>
 						</div>

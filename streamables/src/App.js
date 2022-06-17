@@ -28,11 +28,10 @@ function App() {
 	async function fetchData(searchString) {
 		// making API call
 		const response = await axios.get(
-			`http://localhost:8000/search/${searchString}`
+			`/.netlify/functions/fetchData?s=${searchString}`
 		);
-		// console.log(response.data);
 		// saving the query response to the search list state
-		setSearchList(response.data);
+		setSearchList(response.data.Search);
 	}
 
 	useEffect(() => {

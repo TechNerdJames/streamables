@@ -8,7 +8,7 @@ function Search(props) {
 		<div className="search-input flex-ac">
 			<i className="fa-solid fa-magnifying-glass"></i>
 			<input
-				type="search"
+				type="text"
 				name="search"
 				placeholder="Search for movie or TV series"
 				onChange={handleChange}
