@@ -6,7 +6,7 @@ function Header() {
 			<span role="img" aria-label="movie icon" className="movie-icon left">
 				🎬
 			</span>
-			<h1>Stream-ables</h1>
+			<h1>Streamables</h1>
 			<span role="img" aria-label="movie icon" className="movie-icon right">
 				🎞
 			</span>
