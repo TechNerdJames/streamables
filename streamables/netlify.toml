@@ -1,4 +1,4 @@
 [build]
-functions = "netlify/functions"
+functions = "functions"
 base = "streamables/
 publish = "build"
