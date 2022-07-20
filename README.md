@@ -3,7 +3,7 @@ A responsive web app that allows users to search for a show or movie and see wha
 
 **Link to project:** https://streamables.netlify.app/
 
-![alt tag](http://placecorgi.com/1200/650)
+![alt tag](https://github.com/TechNerdJames/streamables/blob/main/action-screenshot.png)
 
 ## How It's Made:
 
