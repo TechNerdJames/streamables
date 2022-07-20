@@ -14,7 +14,7 @@ My goal for this project was to make a simple UI for users to search for shows a
 
 ## Optimizations
 
-To improve this project, I will refactor my code so it's more efficient and so the CSS isn't all in one file but broken up based on each React component.
+To improve this project, I will be refactoring my code so it's more efficient and so the CSS isn't all in one file but broken up based on each React component.
 
 ## Lessons Learned:
 
